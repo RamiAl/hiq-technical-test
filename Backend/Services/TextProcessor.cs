@@ -15,7 +15,7 @@ namespace Backend.Services
             var words = Regex
                 .Split(content, @"\W+")
                 .Where(w => !string.IsNullOrWhiteSpace(w))
-                .Select(w => w.ToLower())
+                .Select(w => w.ToLower()) // Normalize to lowercase
                 .ToList();
 
             // If no words, return original content
